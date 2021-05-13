@@ -13,6 +13,7 @@ module.exports = {
         lang: config.lang,
         name: config.manifestName,
         short_name: config.manifestShortName,
+        description: config.manifestDescription,
         start_url: config.pathPrefix || config.manifestStartUrl,
         background_color: config.manifestBackgroundColor,
         theme_color: config.manifestThemeColor,
