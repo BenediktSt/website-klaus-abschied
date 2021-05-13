@@ -6,7 +6,6 @@ import Scroll from '../components/Scroll';
 
 import config from '../../config';
 import Footer from '../components/Footer';
-import SocialLinks from '../components/SocialLinks';
 import SubmitComment from '../components/SubmitComment.js';
 import Header from '../components/Header';
 
