@@ -44,19 +44,22 @@ const IndexPage = () => (
     <section id="about" className="about-section">
       <div className="container text-center">
         <div className="row">
-          <div className="col-lg-8 mx-auto">
+          <div className="col-lg-8 mx-auto text-white-50">
             <h2 className="text-white mb-4">Wir nehmen Abschied von Klaus Straube</h2>
-            <img src={portrait} className="img-fluid" alt="" />
+            <img src={portrait} className="img-fluid mb-4" alt="" />
             <p className="text-white-50">
               <blockquote>
-                Und die Seele unbewacht will in freien Flügen schweben, um im Zauberkreis der Nacht tief und tausendfach zu leben.
+                Und die Seele unbewacht <br/>
+                will in freien Flügen schweben <br/>
+                um im Zauberkreis der Nacht <br/>
+                tief und tausendfach zu leben.
                 <br/>
                 <span className="author">Hermann Hesse</span>
               </blockquote>
             </p>
-            <h3 className="text-white mb-4">Beisetzung</h3>
-            <p className="text-white-50">
-            Die Trauerfeier mit anschließender Urnenbeisetzung findet am Freitag,
+            <h2 className="text-white mb-4">Beisetzung</h2>
+            <p>
+              Die Trauerfeier mit anschließender Urnenbeisetzung findet im engen Familienkreis am Freitag,
               den 28. Mai 2021, um 11:00 Uhr
               im RuheForst Pfälzerwald Bad Dürkheim statt.
               <br/>
@@ -105,15 +108,23 @@ const IndexPage = () => (
     <section id="donation" className="donate-section">
       <div className="container text-center">
         <div className="row">
-          <div className="col-lg-8 mx-auto">
+          <div className="col-lg-8 mx-auto text-white-50">
             <h2 className="text-white mb-4">Gedenkspende</h2>
-            <p className="text-white-50">
+            <p className="mb-3">
               Für Klaus waren die Berge stets eine zusätzliche Heimat.
             </p>
-            <p className="text-white-50">
-              Anstelle von Blumen und Kränzen bitten wir daher um eine Spende an den Deutschen Alpenverein (DAV).
+            <p className="mb-3">
+              Da die Beisetzung im RuheForst stattfindet,
+              bitten wir aufgrund des Konzepts des RuheForsts
+              auf eine Spende von Blumen oder Kränzen zu verzichten.
+            </p>
+            <p className="mb-3">
+              Sofern sie den Wunsch verspüren, ist eine freiwillige Gedenkspende an den Deutschen Alpenverein eine alternative Möglichkeit,
+              die im Sinne von Klaus wäre.
               Gerne können Sie dabei als Verwendungszweck <b>"Im Gedenken an Klaus Straube"</b> angeben.
               <br/>
+            </p>
+            <p>
               <a href="https://www.alpenverein-muenchen-oberland.de/spenden/spende-an-muenchen">Zur Spendenseite der Sektion München</a>
             </p>
           </div>
