@@ -9,10 +9,6 @@ import Footer from '../components/Footer';
 import SubmitComment from '../components/SubmitComment.js';
 import Header from '../components/Header';
 
-import ipad from '../assets/images/ipad.png';
-import demoImage1 from '../assets/images/demo-image-01.jpg';
-import demoImage2 from '../assets/images/demo-image-02.jpg';
-import bgMaster from '../assets/images/bg-masthead.jpg';
 
 import portrait from '../assets/images/portrait.jpeg';
 import nachrufDaimler from '../assets/images/daimler-chor-nachruf.jpg'
@@ -50,7 +46,7 @@ const IndexPage = () => (
           </h2>
           <Scroll type="id" element="about">
             <a href="#about" className="btn btn-primary">
-              About
+              Weiter
             </a>
           </Scroll>
         </div>
@@ -75,7 +71,7 @@ const IndexPage = () => (
       </div>
     </section>
 
-    <section id="projects" className="projects-section bg-light">
+    <section id="obituaries" className="projects-section bg-light">
       <div className="container">
         <h2 className="mb-4 text-center">Nachrufe</h2>
         <div className="row align-items-center no-gutters mb-4 mb-lg-5">

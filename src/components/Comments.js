@@ -32,7 +32,7 @@ export default function Comments() {
   }
 
   return (
-    <section className='bg-black projects-section'>
+    <section id="comments" className='bg-black projects-section'>
       <div className='container'>
         <h2 className='mb-4 text-white text-center'>Kondolenzen</h2>
         <div className='row'>
