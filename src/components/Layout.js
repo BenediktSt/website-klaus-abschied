@@ -24,8 +24,8 @@ class Layout extends Component {
             <Helmet
               title={data.site.siteMetadata.title}
               meta={[
-                { name: 'description', content: 'Grayscale' },
-                { name: 'keywords', content: 'site, web' },
+                { name: 'description', content: 'Abschied von Klaus Straube' },
+                { name: 'keywords', content: 'klaus straube, beisetzung, abschied, kondolenz, kondolenzbuch' },
               ]}
             >
               <html lang="en" />
