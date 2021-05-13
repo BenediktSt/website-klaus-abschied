@@ -33,7 +33,7 @@ const IndexPage = () => (
     <header className="masthead">
       <div className="container d-flex h-100 align-items-center">
         <div className="mx-auto text-center">
-          <h1 className="mx-auto my-0 text-uppercase">{config.heading}</h1>
+          <h1 className="mx-auto mt-0 mb-8 text-uppercase">{config.heading}</h1>
           <h2 className="text-white-50 mx-auto mt-2 mb-5">
             <p>
               <i className="fas fa-star-of-life mb-2"></i>
