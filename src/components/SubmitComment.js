@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import firebase from 'firebase/app';
+import firebase from 'gatsby-plugin-firebase';
 import 'firebase/firestore';
 
 if (!firebase.apps.length) {

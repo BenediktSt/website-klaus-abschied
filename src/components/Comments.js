@@ -1,18 +1,7 @@
 import React, { useState } from 'react';
 
-import firebase from 'firebase/app';
+import firebase from 'gatsby-plugin-firebase';
 import 'firebase/firestore';
-
-if (!firebase.apps.length) {
-  firebase.initializeApp({
-    apiKey: 'AIzaSyAJnCV0mzUuzS9tNDV_wenyVO9SD2C_NhA',
-    authDomain: 'kondolenz-klaus.firebaseapp.com',
-    projectId: 'kondolenz-klaus',
-    storageBucket: 'kondolenz-klaus.appspot.com',
-    messagingSenderId: '693109076423',
-    appId: '1:693109076423:web:8db46978d61c6f642c69e2',
-  });
-}
 
 const firestore = firebase.firestore();
 const commentsRef = firestore.collection('comments');
@@ -20,16 +9,18 @@ const query = commentsRef.orderBy('createdAt').limit(10);
 
 export default function Comments() {
   const [comments, setComments] = useState();
-  if (!comments){
-    query.get().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        const data = querySnapshot.docs.map(doc => doc.data());
-        setComments(data);
+  React.useEffect(() => {
+    if (!comments) {
+      query.get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const data = querySnapshot.docs.map(doc => doc.data());
+          setComments(data);
 
+        });
+        console.log('test')
       });
-      console.log('test')
-    });
-  }
+    }
+  }, []);
 
   return (
     <section id="comments" className='bg-black projects-section'>

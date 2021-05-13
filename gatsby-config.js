@@ -22,5 +22,20 @@ module.exports = {
     },
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
+    {
+      resolve: "gatsby-plugin-firebase",
+      options: {
+        credentials: {
+          apiKey: "AIzaSyAJnCV0mzUuzS9tNDV_wenyVO9SD2C_NhA",
+          authDomain: "kondolenz-klaus.firebaseapp.com",
+          // databaseURL: "<YOUR_FIREBASE_DATABASE_URL>",
+          projectId: "kondolenz-klaus",
+          storageBucket: "kondolenz-klaus.appspot.com",
+          messagingSenderId: "693109076423",
+          appId: "1:693109076423:web:8db46978d61c6f642c69e2"
+        }
+      }
+    }
+
   ],
 };
