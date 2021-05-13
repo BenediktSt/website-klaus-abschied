@@ -1,4 +1,5 @@
 import React from 'react';
+import firebase from 'firebase/app';
 
 import Layout from '../components/Layout';
 import Scroll from '../components/Scroll';
@@ -18,6 +19,17 @@ import portrait from '../assets/images/portrait.jpeg';
 import nachrufDaimler from '../assets/images/daimler-chor-nachruf.jpg'
 import nachrufAugsburg from '../assets/images/kammeroper-augsburg-nachruf.png'
 import Comments from '../components/Comments';
+
+if (!firebase.apps.length) {
+  firebase.initializeApp({
+    apiKey: "AIzaSyAJnCV0mzUuzS9tNDV_wenyVO9SD2C_NhA",
+    authDomain: "kondolenz-klaus.firebaseapp.com",
+    projectId: "kondolenz-klaus",
+    storageBucket: "kondolenz-klaus.appspot.com",
+    messagingSenderId: "693109076423",
+    appId: "1:693109076423:web:8db46978d61c6f642c69e2"
+  })
+}
 
 const IndexPage = () => (
   <Layout>
