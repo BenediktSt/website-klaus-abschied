@@ -5,3 +5,11 @@
     margin-bottom: 5rem;
   }
 }
+
+.donate-section {
+  padding-top: 10rem;
+  background: linear-gradient(to bottom, $black 0%,#{fade-out($black, .1)} 75%,#{fade-out($black, .01)} 100%);
+  p {
+    margin-bottom: 5rem;
+  }
+}

@@ -106,6 +106,25 @@ const IndexPage = () => (
 
     <SubmitComment />
 
+    <section id="donation" className="donate-section">
+      <div className="container text-center">
+        <div className="row">
+          <div className="col-lg-8 mx-auto">
+            <h2 className="text-white mb-4">Gedenkspende</h2>
+            <p className="text-white-50">
+              Für Klaus waren die Berge stets eine zusätzliche Heimat.
+            </p>
+            <p className="text-white-50">
+              Anstelle von Blumen und Kränzen bitten wir daher um eine Spende an den Deutschen Alpenverein (DAV).
+              Gerne können Sie dabei als Verwendungszweck <b>"Im Gedenken an Klaus Straube"</b> angeben.
+              <br/>
+              <a href="https://www.alpenverein-muenchen-oberland.de/spenden/spende-an-muenchen">Zur Spendenseite der Sektion München</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <Footer />
   </Layout>
 );
