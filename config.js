@@ -1,5 +1,6 @@
 module.exports = {
   siteTitle: 'Klaus Straube', // <title>
+  lang: 'de',
   manifestName: 'Abschied von Klaus Straube',
   manifestShortName: 'KlausStraube', // max 12 characters
   manifestStartUrl: '/',
