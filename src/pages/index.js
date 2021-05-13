@@ -54,6 +54,14 @@ const IndexPage = () => (
                 <span className="author">Hermann Hesse</span>
               </blockquote>
             </p>
+            <h3 className="text-white mb-4">Beisetzung</h3>
+            <p className="text-white-50">
+            Die Trauerfeier mit anschließender Urnenbeisetzung findet am Freitag,
+              den 28. Mai 2021, um 11:00 Uhr
+              im RuheForst Pfälzerwald Bad Dürkheim statt.
+              <br/>
+              <a href="https://www.ruheforst-pfaelzerwald.de/">Weitere Informationen zum RuheForst Pfälzerwald</a>
+            </p>
           </div>
         </div>
       </div>

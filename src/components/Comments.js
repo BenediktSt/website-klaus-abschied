@@ -17,7 +17,6 @@ export default function Comments() {
           setComments(data);
 
         });
-        console.log('test')
       });
     }
   }, []);
