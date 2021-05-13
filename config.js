@@ -9,6 +9,6 @@ module.exports = {
   manifestThemeColor: '#64a19d',
   manifestDisplay: 'standalone',
   manifestIcon: 'src/assets/img/website-icon.png',
-  pathPrefix: `/website-klaus-abschied/`, // This path is subpath of your hosting https://domain/portfolio
+  pathPrefix: `/`, // This path is subpath of your hosting https://domain/portfolio
   heading: 'Klaus Straube'
 };
