@@ -6,7 +6,7 @@ import Scroll from '../components/Scroll';
 import config from '../../config';
 import Footer from '../components/Footer';
 import SocialLinks from '../components/SocialLinks';
-import Subscribe from '../components/Subscribe';
+import SubmitComment from '../components/SubmitComment.js';
 import Header from '../components/Header';
 
 import ipad from '../assets/images/ipad.png';
@@ -97,7 +97,7 @@ const IndexPage = () => (
     </section>
     <Comments />
 
-    <Subscribe />
+    <SubmitComment />
 
     <Footer />
   </Layout>
