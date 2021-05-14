@@ -4,32 +4,61 @@ import firebase from 'gatsby-plugin-firebase';
 import 'firebase/firestore';
 
 const firestore = firebase.firestore();
+const pageSize = 10;
 const commentsRef = firestore.collection('comments');
 const query = commentsRef
   .where('display', '==', true)
   .orderBy('createdAt', 'desc')
-  .limit(10);
+  .limit(pageSize);
 
 export default function Comments() {
   const [comments, setComments] = useState();
+  const [lastDoc, setLastDoc] = useState();
+  const [firstDoc, setFirstDoc] = useState();
+
+  function queryComments(query) {
+    query.get().then((querySnapshot) => {
+      const docs = querySnapshot.docs
+      if(docs.length > 0) {
+        setFirstDoc(docs[0]);
+        setLastDoc(docs[querySnapshot.docs.length - 1]);
+        const data = docs.map(doc => doc.data());
+        setComments(data);
+      }
+    });
+  }
+
   React.useEffect(() => {
     if (!comments) {
-      query.get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          const data = querySnapshot.docs.map(doc => doc.data());
-          setComments(data);
-        });
-      });
+      queryComments(query);
     }
   }, []);
 
+  function nextPage() {
+    const nextQuery = commentsRef
+      .where('display', '==', true)
+      .orderBy('createdAt', 'desc')
+      .startAfter(lastDoc)
+      .limit(pageSize);
+    queryComments(nextQuery);
+  }
+
+  function previousPage() {
+    const prevQuery = commentsRef
+      .where('display', '==', true)
+      .orderBy('createdAt', 'desc')
+      .endBefore(firstDoc)
+      .limitToLast(pageSize);
+    queryComments(prevQuery);
+  }
+
   return (
-    <section id="comments" className='bg-black projects-section'>
+    <section id='comments' className='bg-black projects-section'>
       <div className='container'>
         <h2 className='mb-4 text-white text-center'>Kondolenzen</h2>
         <div className='row'>
           <div className='d-flex h-100 col-8 mx-auto flex-column justify-content-center'>
-            {!comments && <NoComments/>}
+            {!comments && <NoComments />}
             {comments && comments.map(entry => {
               const { subject, message, name } = entry;
               return (
@@ -39,7 +68,7 @@ export default function Comments() {
                     <small className='form-text text-white'>
                       Von {name}
                     </small>
-                    <p className='text-white-50' style={{whiteSpace: 'pre-line'}}>
+                    <p className='text-white-50' style={{ whiteSpace: 'pre-line' }}>
                       {message}
                     </p>
                     <hr className='d-none d-lg-block mb-0' />
@@ -47,6 +76,7 @@ export default function Comments() {
                 </div>
               );
             })}
+            {comments && <Pagination />}
           </div>
         </div>
       </div>
@@ -58,6 +88,15 @@ export default function Comments() {
       <p className='text-white-50 text-center'>
         Noch keine Kondolenzen vorhanden.
       </p>
-    )
+    );
+  }
+
+  function Pagination() {
+    return (
+      <div className='text-center mt-2'>
+        <button onClick={previousPage} className='btn btn-primary mr-1' type='button'><i className="fas fa-chevron-left"></i></button>
+        <button onClick={nextPage} className='btn btn-primary ml-1' type='button'><i className="fas fa-chevron-right"></i></button>
+      </div>
+    );
   }
 }
