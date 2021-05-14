@@ -5,7 +5,10 @@ import 'firebase/firestore';
 
 const firestore = firebase.firestore();
 const commentsRef = firestore.collection('comments');
-const query = commentsRef.orderBy('createdAt').limit(10);
+const query = commentsRef
+  .where('display', '==', true)
+  .orderBy('createdAt', 'desc')
+  .limit(10);
 
 export default function Comments() {
   const [comments, setComments] = useState();
