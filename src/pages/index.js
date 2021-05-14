@@ -7,12 +7,13 @@ import config from '../../config';
 import Footer from '../components/Footer';
 import SubmitComment from '../components/SubmitComment.js';
 import Header from '../components/Header';
-
+import Comments from '../components/Comments';
 
 import portrait from '../assets/images/portrait.jpeg';
-import nachrufDaimler from '../assets/images/daimler-chor-nachruf.jpg'
-import nachrufAugsburg from '../assets/images/kammeroper-augsburg-nachruf.png'
-import Comments from '../components/Comments';
+import nachrufDaimler from '../assets/images/daimler-chor-nachruf.jpg';
+import nachrufAugsburg from '../assets/images/kammeroper-augsburg-nachruf.png';
+import nachrufNehren from '../assets/images/nehren.png';
+import nachrufBerkheim from '../assets/images/berkheim.png';
 
 const IndexPage = () => (
   <Layout>
@@ -99,6 +100,32 @@ const IndexPage = () => (
             </div>
           </div>
         </div>
+        <div className="row align-items-center no-gutters mb-4 mb-lg-5">
+          <div className="col-xl-8 col-lg-7">
+            <img className="img-fluid mb-3 mb-lg-0" src={nachrufNehren} alt="" />
+          </div>
+          <div className="col-xl-4 col-lg-5">
+            <div className="featured-text text-center text-lg-left">
+              <h4>Nachruf des Musikvereins Nehren</h4>
+              <p className="text-black-50 mb-0">
+                <a href="https://www.mv-nehren.de/">Zum Nachruf des Musikvereins Nehren</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="row align-items-center no-gutters mb-4 mb-lg-5">
+          <div className="col-xl-8 col-lg-7">
+            <img className="img-fluid mb-3 mb-lg-0" src={nachrufBerkheim} alt="" />
+          </div>
+          <div className="col-xl-4 col-lg-5 order-lg-first">
+            <div className="featured-text text-center text-lg-left">
+              <h4>Nachruf des Musikvereins Berkheim</h4>
+              <p className="text-black-50 mb-0">
+                <a href="https://mvberkheim.de/">Zum Nachruf des Musikvereins Berkheim</a>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <Comments />
@@ -135,5 +162,7 @@ const IndexPage = () => (
     <Footer />
   </Layout>
 );
+
+// alternative : https://www.himalaya-hilfe.de/mitgliedschaft/
 
 export default IndexPage;
