@@ -20,26 +20,28 @@ export default function SubmitComment() {
   const [subjectValue, setSubject] = useState('');
   const [messageValue, setMessage] = useState('');
   const [showSubmitionNote, setSubmitionNote] = useState(false)
+  const [showErrorNote, setErrorNote] = useState(false)
 
   const commentsRef = firestore.collection('comments');
 
   const sendComment = async (e) => {
     e.preventDefault();
-    console.log(nameValue);
-    console.log(subjectValue);
-    console.log(messageValue);
 
-    await commentsRef.add({
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      name: nameValue,
-      subject: subjectValue,
-      message: messageValue,
-    });
+    try {
+      await commentsRef.add({
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        name: nameValue,
+        subject: subjectValue,
+        message: messageValue,
+      });
+      setName('');
+      setSubject('');
+      setMessage('');
+      setSubmitionNote(true);
+    } catch (e) {
+      setErrorNote(true);
+    }
 
-    setName('');
-    setSubject('');
-    setMessage('');
-    setSubmitionNote(true);
   };
   return (
     <section id='sendComment' className='signup-section'>
@@ -105,6 +107,7 @@ export default function SubmitComment() {
                   Wir werden Ihren Kondolenzeintrag sichten, bevor er auf der Seite erscheint.
                 </small>
                 {showSubmitionNote && <SubmitionNote />}
+                {showErrorNote && <ErrorNote />}
               </div>
             </form>
           </div>
@@ -117,7 +120,20 @@ export default function SubmitComment() {
     const onClick = () => setSubmitionNote(false)
     return (
       <div className='alert alert-primary text-center' role='alert'>
-        Kondolenzeintrag erfolgreich gesendet
+        Kondolenzeintrag erfolgreich gesendet.
+        <button onClick={onClick} type="button" className="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    )
+  }
+
+  function ErrorNote() {
+    const onClick = () => setErrorNote(false)
+    return (
+      <div className='alert alert-danger text-center' role='alert'>
+        Leider ist ein Fehler aufgetreten. <br/>
+        Bitte versuchen Sie später erneut.
         <button onClick={onClick} type="button" className="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
