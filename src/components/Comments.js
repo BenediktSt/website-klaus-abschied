@@ -18,7 +18,6 @@ export default function Comments() {
         querySnapshot.forEach((doc) => {
           const data = querySnapshot.docs.map(doc => doc.data());
           setComments(data);
-
         });
       });
     }
@@ -30,6 +29,7 @@ export default function Comments() {
         <h2 className='mb-4 text-white text-center'>Kondolenzen</h2>
         <div className='row'>
           <div className='d-flex h-100 col-8 mx-auto flex-column justify-content-center'>
+            {!comments && <NoComments/>}
             {comments && comments.map(entry => {
               const { subject, message, name } = entry;
               return (
@@ -52,4 +52,12 @@ export default function Comments() {
       </div>
     </section>
   );
+
+  function NoComments() {
+    return (
+      <p className='text-white-50 text-center'>
+        Noch keine Kondolenzen vorhanden.
+      </p>
+    )
+  }
 }
