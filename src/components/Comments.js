@@ -93,9 +93,13 @@ export default function Comments() {
 
   function Pagination() {
     return (
-      <div className='text-center mt-2'>
-        <button onClick={previousPage} className='btn btn-primary mr-1' type='button'><i className="fas fa-chevron-left"></i></button>
-        <button onClick={nextPage} className='btn btn-primary ml-1' type='button'><i className="fas fa-chevron-right"></i></button>
+      <div className='text-center mt-2 btn-group-sm'>
+        <button onClick={previousPage} className='btn btn-primary mr-1' type='button' aria-label="Vorherige Kondolenzen laden">
+          <i className="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button onClick={nextPage} className='btn btn-primary ml-1' type='button' aria-label="Weitere Kondolenzen laden">
+          <i className="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
       </div>
     );
   }
