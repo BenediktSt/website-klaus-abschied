@@ -1,0 +1,6 @@
+User-agent: Googlebot-Image
+Disallow: /static/daimler-chor-nachruf*.jpg
+Disallow: /static/kammeroper-augsburg-nachruf*.png
+Disallow: /static/nehren*.png
+Disallow: /static/berkheim*.png
+Disallow: /static/zamir*.png
