@@ -15,16 +15,19 @@ export default function Comments() {
   const [comments, setComments] = useState();
   const [lastDoc, setLastDoc] = useState();
   const [firstDoc, setFirstDoc] = useState();
+  const [loading, setLoading] = useState(false);
 
   function queryComments(query) {
+    setLoading(true);
     query.get().then((querySnapshot) => {
-      const docs = querySnapshot.docs
-      if(docs.length > 0) {
+      const docs = querySnapshot.docs;
+      if (docs.length > 0) {
         setFirstDoc(docs[0]);
         setLastDoc(docs[querySnapshot.docs.length - 1]);
         const data = docs.map(doc => doc.data());
         setComments(data);
       }
+      setLoading(false);
     });
   }
 
@@ -77,6 +80,7 @@ export default function Comments() {
               );
             })}
             {comments && <Pagination />}
+            <Loading />
           </div>
         </div>
       </div>
@@ -91,14 +95,22 @@ export default function Comments() {
     );
   }
 
+  function Loading() {
+    return (
+      <div className='mt-1 text-center text-white-50'><span className={loading ? "loading" : "invisible"}>Laden ...</span></div>
+    );
+  }
+
   function Pagination() {
     return (
       <div className='text-center mt-2 btn-group-sm'>
-        <button onClick={previousPage} className='btn btn-primary mr-1' type='button' aria-label="Vorherige Kondolenzen laden">
-          <i className="fas fa-chevron-left" aria-hidden="true"></i>
+        <button onClick={previousPage} className='btn btn-primary mr-1' type='button'
+                aria-label='Vorherige Kondolenzen laden'>
+          <i className='fas fa-chevron-left' aria-hidden='true'></i>
         </button>
-        <button onClick={nextPage} className='btn btn-primary ml-1' type='button' aria-label="Weitere Kondolenzen laden">
-          <i className="fas fa-chevron-right" aria-hidden="true"></i>
+        <button onClick={nextPage} className='btn btn-primary ml-1' type='button'
+                aria-label='Weitere Kondolenzen laden'>
+          <i className='fas fa-chevron-right' aria-hidden='true'></i>
         </button>
       </div>
     );
