@@ -35,7 +35,7 @@ export default function Comments() {
     if (!comments) {
       queryComments(query);
     }
-  }, []);
+  });
 
   function nextPage() {
     const nextQuery = commentsRef
@@ -65,7 +65,7 @@ export default function Comments() {
             {comments && comments.map(entry => {
               const { subject, message, name } = entry;
               return (
-                <div className='project-text p-2'>
+                <div className='project-text p-2' key={subject + name}>
                   <div className='text-center'>
                     <h4 className='text-white'>{subject}</h4>
                     <small className='form-text text-white'>
