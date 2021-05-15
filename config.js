@@ -3,7 +3,7 @@ module.exports = {
   lang: 'de',
   manifestName: 'Abschied von Klaus Straube',
   manifestShortName: 'KlausStraube', // max 12 characters
-  manifestDescription: 'Online Kondolenzbuch von Klaus Straube',
+  manifestDescription: 'Gedenkseite von Klaus Straube. Nachrufe, Kondolenzen und Abschied nehmen.',
   manifestStartUrl: '/',
   manifestBackgroundColor: '#64a19d',
   manifestThemeColor: '#64a19d',

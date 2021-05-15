@@ -24,8 +24,8 @@ class Layout extends Component {
             <Helmet
               title={data.site.siteMetadata.title}
               meta={[
-                { name: 'description', content: 'Abschied von Klaus Straube' },
-                { name: 'keywords', content: 'klaus straube, beisetzung, abschied, kondolenz, kondolenzbuch' },
+                { name: 'description', content: 'Gedenkseite von Klaus Straube. Nachrufe, Kondolenzen und Abschied nehmen.' },
+                { name: 'keywords', content: 'klaus straube, beisetzung, abschied, kondolenz, kondolenzbuch, trauer, nachruf' },
               ]}
             >
               <html lang="en" />
