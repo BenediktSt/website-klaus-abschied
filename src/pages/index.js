@@ -49,17 +49,15 @@ const IndexPage = () => (
           <div className="col-lg-8 mx-auto text-white-50">
             <h2 className="text-white mb-4">Wir nehmen Abschied von Klaus Straube</h2>
             <img src={portrait} className="img-fluid mb-4" alt="" />
-            <p className="text-white-50">
-              <blockquote>
-                Und die Seele unbewacht <br/>
-                will in freien Flügen schweben <br/>
-                um im Zauberkreis der Nacht <br/>
-                tief und tausendfach zu leben.
-                <br/>
-                <span className="author">Hermann Hesse</span>
-              </blockquote>
-            </p>
-            <h2 className="text-white mb-4">Beisetzung</h2>
+            <blockquote className="text-white-50">
+              Und die Seele unbewacht <br/>
+              will in freien Flügen schweben <br/>
+              um im Zauberkreis der Nacht <br/>
+              tief und tausendfach zu leben.
+              <br/>
+              <span className="author">Hermann Hesse</span>
+            </blockquote>
+            <h2 className="text-white mb-4 mt-5">Beisetzung</h2>
             <p>
               Die Trauerfeier mit anschließender Urnenbeisetzung findet im engen Familienkreis am Freitag,
               den 28. Mai 2021, um 11:00 Uhr
