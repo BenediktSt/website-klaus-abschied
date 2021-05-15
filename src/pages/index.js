@@ -14,6 +14,7 @@ import nachrufDaimler from '../assets/images/daimler-chor-nachruf.jpg';
 import nachrufAugsburg from '../assets/images/kammeroper-augsburg-nachruf.png';
 import nachrufNehren from '../assets/images/nehren.png';
 import nachrufBerkheim from '../assets/images/berkheim.png';
+import nachrufZamir from '../assets/images/zamir.png';
 
 const IndexPage = () => (
   <Layout>
@@ -92,7 +93,7 @@ const IndexPage = () => (
             <img className="img-fluid mb-3 mb-lg-0" src={nachrufAugsburg} alt="" />
           </div>
           <div className="col-xl-4 col-lg-5 order-lg-first">
-            <div className="featured-text text-center text-lg-left">
+            <div className="featured-text text-center text-lg-left ml-1">
               <h4>Nachruf der Kammeroper Augsburg</h4>
               <p className="text-black-50 mb-0">
                 <a href="https://kammeroper-augsburg.de/kammeroper/index.php">Zum Nachruf der Kammeroper Augsburg</a>
@@ -118,10 +119,23 @@ const IndexPage = () => (
             <img className="img-fluid mb-3 mb-lg-0" src={nachrufBerkheim} alt="" />
           </div>
           <div className="col-xl-4 col-lg-5 order-lg-first">
-            <div className="featured-text text-center text-lg-left">
+            <div className="featured-text text-center text-lg-left ml-1">
               <h4>Nachruf des Musikvereins Berkheim</h4>
               <p className="text-black-50 mb-0">
                 <a href="https://mvberkheim.de/">Zum Nachruf des Musikvereins Berkheim</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="row align-items-center no-gutters mb-4 mb-lg-5">
+          <div className="col-xl-8 col-lg-7">
+            <img className="img-fluid mb-3 mb-lg-0" src={nachrufZamir} alt="" />
+          </div>
+          <div className="col-xl-4 col-lg-5">
+            <div className="featured-text text-center text-lg-left">
+              <h4>Nachruf des Zamir Chors</h4>
+              <p className="text-black-50 mb-0">
+                <a href="https://zamirchor.de/nachruf/">Zum Nachruf des Zamir Chors</a>
               </p>
             </div>
           </div>
