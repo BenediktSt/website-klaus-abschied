@@ -67,7 +67,7 @@ export default function Comments() {
               return (
                 <div className='project-text p-2' key={subject + name}>
                   <div className='text-center'>
-                    <h4 className='text-white'>{subject}</h4>
+                    <h3 className='text-white'>{subject}</h3>
                     <small className='form-text text-white'>
                       Von {name}
                     </small>
