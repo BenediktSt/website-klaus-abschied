@@ -152,7 +152,7 @@ const IndexPage = () => (
           <div className="col-lg-8 mx-auto text-white-50">
             <h2 className="text-white mb-4">Gedenkspende</h2>
             <p className="mb-3">
-              Für Klaus waren die Berge stets eine zusätzliche Heimat.
+              Für Klaus waren die Berge und besonders der Himalaya stets eine zusätzliche Heimat.
             </p>
             <p className="mb-3">
               Da die Beisetzung im RuheForst stattfindet,
@@ -160,13 +160,15 @@ const IndexPage = () => (
               auf eine Spende von Blumen oder Kränzen zu verzichten.
             </p>
             <p className="mb-3">
-              Sofern sie den Wunsch verspüren, ist eine freiwillige Gedenkspende an den Deutschen Alpenverein eine alternative Möglichkeit,
-              die im Sinne von Klaus wäre.
+              Sofern Sie den Wunsch verspüren, ist eine freiwillige Gedenkspende an die <a href="https://www.himalaya-friends.de/ueber-uns/">himalaya-friends</a> eine alternative Möglichkeit,
+              die im Sinne von Klaus wäre. Die himalaya-friends unterstützen verschiedene Hilfsprojekte im Himalaya,
+              vor allem zur Unterstützung benachteiligter Kinder.
+            </p>
+            <p className="mb-3">
               Gerne können Sie dabei als Verwendungszweck <b>"Im Gedenken an Klaus Straube"</b> angeben.
-              <br/>
             </p>
             <p>
-              <a href="https://www.alpenverein-muenchen-oberland.de/spenden/spende-an-muenchen">Zur Spendenseite der Sektion München</a>
+              <a href="https://www.himalaya-friends.de/ueber-uns/#page-footer">Zu den Spenden-Informationen der himalaya-friends</a>
             </p>
           </div>
         </div>
@@ -176,7 +178,5 @@ const IndexPage = () => (
     <Footer />
   </Layout>
 );
-
-// alternative : https://www.himalaya-hilfe.de/mitgliedschaft/
 
 export default IndexPage;
