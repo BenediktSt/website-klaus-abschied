@@ -97,7 +97,7 @@ export default function SubmitComment() {
                   className='form-control'
                   id='textAreaMessage'
                   placeholder='Eine Nachricht angeben'
-                  rows='3'>
+                  rows='5'>
                 </textarea>
               </div>
               <div className='submit-row text-right'>
