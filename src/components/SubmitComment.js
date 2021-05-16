@@ -33,6 +33,7 @@ export default function SubmitComment() {
         name: nameValue,
         subject: subjectValue,
         message: messageValue,
+        display: false
       });
       setName('');
       setSubject('');
