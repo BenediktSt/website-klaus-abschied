@@ -63,7 +63,7 @@ export default function Comments() {
           <div className='d-flex h-100 col-8 mx-auto flex-column justify-content-center'>
             {!comments && <NoComments />}
             {comments && comments.map(entry => {
-              const { subject, message, name } = entry;
+              const { subject, message, name, url } = entry;
               return (
                 <div className='project-text p-2' key={subject + name}>
                   <div className='text-center'>
@@ -74,6 +74,10 @@ export default function Comments() {
                     <p className='text-white-50' style={{ whiteSpace: 'pre-line' }}>
                       {message}
                     </p>
+                    {url && (
+                      <p>
+                        <a href={url}>{url}</a>
+                      </p>)}
                     <hr className='d-none d-lg-block mb-0' />
                   </div>
                 </div>
