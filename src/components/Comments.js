@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 import firebase from 'gatsby-plugin-firebase';
 import 'firebase/firestore';
@@ -17,18 +17,19 @@ export default function Comments() {
   const [firstDoc, setFirstDoc] = useState();
   const [loading, setLoading] = useState(false);
 
-  function queryComments(query) {
+  const paginationRef = useRef();
+
+  async function queryComments(query) {
     setLoading(true);
-    query.get().then((querySnapshot) => {
-      const docs = querySnapshot.docs;
-      if (docs.length > 0) {
-        setFirstDoc(docs[0]);
-        setLastDoc(docs[querySnapshot.docs.length - 1]);
-        const data = docs.map(doc => doc.data());
-        setComments(data);
-      }
-      setLoading(false);
-    });
+    const querySnapshot = await query.get();
+    const docs = querySnapshot.docs;
+    if (docs.length > 0) {
+      setFirstDoc(docs[0]);
+      setLastDoc(docs[querySnapshot.docs.length - 1]);
+      const data = docs.map(doc => doc.data());
+      setComments(data);
+    }
+    setLoading(false);
   }
 
   React.useEffect(() => {
@@ -37,22 +38,24 @@ export default function Comments() {
     }
   });
 
-  function nextPage() {
+  async function nextPage() {
     const nextQuery = commentsRef
       .where('display', '==', true)
       .orderBy('createdAt', 'desc')
       .startAfter(lastDoc)
       .limit(pageSize);
-    queryComments(nextQuery);
+    await queryComments(nextQuery);
+    paginationRef.current.scrollIntoView({ block: 'end', behavior: 'smooth' });
   }
 
-  function previousPage() {
+  async function previousPage() {
     const prevQuery = commentsRef
       .where('display', '==', true)
       .orderBy('createdAt', 'desc')
       .endBefore(firstDoc)
       .limitToLast(pageSize);
-    queryComments(prevQuery);
+    await queryComments(prevQuery);
+    paginationRef.current.scrollIntoView({ block: 'end', behavior: 'smooth' });
   }
 
   return (
@@ -101,13 +104,15 @@ export default function Comments() {
 
   function Loading() {
     return (
-      <div className='mt-1 text-center text-white-50'><span className={loading ? "loading" : "invisible"}>Laden ...</span></div>
+      <div className='mt-1 text-center text-white-50'>
+        <span className={loading ? 'loading' : 'invisible'}>Laden ...</span>
+      </div>
     );
   }
 
   function Pagination() {
     return (
-      <div className='text-center mt-2 btn-group-sm'>
+      <div className='text-center mt-2 btn-group-sm' ref={paginationRef}>
         <button onClick={previousPage} className='btn btn-primary mr-1' type='button'
                 aria-label='Vorherige Kondolenzen laden'>
           <i className='fas fa-chevron-left' aria-hidden='true'></i>
