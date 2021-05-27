@@ -139,6 +139,15 @@ const IndexPage = () => (
               </div>
             </div>
           </div>
+          <div className='project-text p-2'>
+            <div className='text-center'>
+              <hr className='d-none d-lg-block mb-4' />
+              <p style={{ whiteSpace: 'pre-line' }}>
+                Eine Traueranzeige ist auch im Trauerportal des Mannheimer Morgen zu finden.
+              </p>
+              <a href='https://traueranzeigen-mannheimer-morgen.morgenweb.de/traueranzeige/klaus-straube'>Zur Traueranzeige des Mannheimer Morgen</a>
+            </div>
+          </div>
         </div>
       </section>
       <Comments />
