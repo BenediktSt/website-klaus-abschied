@@ -15,13 +15,15 @@ import nachrufAugsburg from '../assets/images/kammeroper-augsburg-nachruf.png';
 import nachrufNehren from '../assets/images/nehren.png';
 import nachrufBerkheim from '../assets/images/berkheim.png';
 import nachrufZamir from '../assets/images/zamir.png';
+import nachrufEsslingen from '../assets/images/esslingen.png';
+import nachrufStudiobuehne from '../assets/images/studiobuehne.png';
 
 const IndexPage = () => (
   <Layout>
     <Header />
 
     <header className='masthead'>
-      <div className='container d-flex h-100 align-items-center'>
+      <div className='container d-flex h-100 align-items-center' id='page-top'>
         <div className='mx-auto text-center'>
           <h1 className='mx-auto mt-0 mb-8 text-uppercase'>{config.heading}</h1>
           <h2 className='text-white-50 mx-auto mt-2 mb-5'>
@@ -60,7 +62,7 @@ const IndexPage = () => (
               </blockquote>
               <h2 className='text-white mb-4 mt-5'>Beisetzung</h2>
               <p>
-                Die Trauerfeier mit anschließender Urnenbeisetzung findet im engen Familienkreis am Freitag,
+                Die Trauerfeier mit anschließender Urnenbeisetzung fand am Freitag,
                 den 28. Mai 2021, um 11:00 Uhr
                 im RuheForst Pfälzerwald Bad Dürkheim statt.
                 <br />
@@ -136,6 +138,29 @@ const IndexPage = () => (
                 <p className='text-black-50 mb-0'>
                   <a href='https://zamirchor.de/nachruf/'>Zum Nachruf des Zamir Chors</a>
                 </p>
+              </div>
+            </div>
+          </div>
+          <div className='row align-items-center no-gutters mb-4 mb-lg-5'>
+            <div className='col-xl-8 col-lg-7'>
+              <img className='img-fluid mb-3 mb-lg-0' src={nachrufEsslingen} alt='' />
+            </div>
+            <div className='col-xl-4 col-lg-5 order-lg-first'>
+              <div className='featured-text text-center text-lg-left ml-1'>
+                <h3>Nachruf des Polizeichor Esslingen</h3>
+                <p className='text-black-50 mb-0'>
+                  <a href='https://zwiebel-es.de/ein-platz-ist-leer-wer-wird-vor-uns-stehen/'>Zum Nachruf des Polizeichor Esslingen</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className='row align-items-center no-gutters mb-4 mb-lg-5'>
+            <div className='col-xl-8 col-lg-7'>
+              <img className='img-fluid mb-3 mb-lg-0' src={nachrufStudiobuehne} alt='' />
+            </div>
+            <div className='col-xl-4 col-lg-5'>
+              <div className='featured-text text-center text-lg-left'>
+                <h3>Nachruf der Studiobühne Bayreuth</h3>
               </div>
             </div>
           </div>
