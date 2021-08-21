@@ -18,6 +18,8 @@ import nachrufZamir from '../assets/images/zamir.png';
 import nachrufEsslingen from '../assets/images/esslingen.png';
 import nachrufStudiobuehne from '../assets/images/studiobuehne.png';
 
+import himalayaFriends from '../assets/images/himalaya-friends.jpg';
+
 const IndexPage = () => (
   <Layout>
     <Header />
@@ -185,26 +187,23 @@ const IndexPage = () => (
             <div className='col-lg-8 mx-auto text-white-50'>
               <h2 className='text-white mb-4'>Gedenkspende</h2>
               <p className='mb-3'>
-                Für Klaus waren die Berge und besonders der Himalaya stets eine zusätzliche Heimat.
+                Für die zahlreichen Spenden möchten wir und die <a href='https://www.himalaya-friends.de/ueber-uns/'>himalaya-friends</a>
+                sich herzlich bei Ihnen bedanken.
+                Für Klaus waren die Berge und besonders der Himalaya stets eine zusätzliche Heimat und er würde sich ebenfalls sehr über diese Verwendung freuen.
               </p>
-              <p className='mb-3'>
-                Da die Beisetzung im RuheForst stattfindet,
-                bitten wir aufgrund des Konzepts des RuheForsts
-                auf eine Spende von Blumen oder Kränzen zu verzichten.
-              </p>
-              <p className='mb-3'>
-                Sofern Sie den Wunsch verspüren, ist eine freiwillige Gedenkspende an die <a
-                href='https://www.himalaya-friends.de/ueber-uns/'>himalaya-friends</a> eine alternative Möglichkeit,
-                die im Sinne von Klaus wäre. Die himalaya-friends unterstützen verschiedene Hilfsprojekte im Himalaya,
-                vor allem zur Unterstützung benachteiligter Kinder.
-              </p>
-              <p className='mb-3'>
-                Gerne können Sie dabei als Verwendungszweck <b>"Im Gedenken an Klaus Straube"</b> angeben.
-              </p>
-              <p>
-                <a href='https://www.himalaya-friends.de/ueber-uns/#page-footer'>Zu den Spenden-Informationen der
-                  himalaya-friends</a>
-              </p>
+              <div className='mx-auto'>
+                <img src={himalayaFriends} className='img-fluid mb-4' alt='' />
+              </div>
+              <blockquote className='text-white-50'>
+                <p className='mb-3'>
+                  Wir möchten uns bei Ihnen im Namen der Schulkinder der Shree Muktimarga Secondary Schule in Ghara ganz herzlich bedanken.
+                  Mit dem Nachruf und dem Spendenaufruf für unseren Verein können wir über zwei Jahre lang die Kinder unterstützen!
+                </p>
+                <p className='mb-3'>
+                  'Das schönste Denkmal, das ein Mensch bekommen kann, steht in den Herzen der Mitmenschen.' Albert Schweitzer
+                </p>
+                <span className='author'><a href='https://www.himalaya-friends.de'>himalaya-friends</a></span>
+              </blockquote>
             </div>
           </div>
         </div>

@@ -6,3 +6,4 @@ Disallow: /static/berkheim*.png
 Disallow: /static/zamir*.png
 Disallow: /static/esslingen*.png
 Disallow: /static/studiobuehne*.png
+Disallow: /static/himalaya-freinds*.jpg
